@@ -9,11 +9,11 @@
       <div class="card">
         <div class="card-body">
           <h5 class="card-title"><%= entry["title"] %></h5>
-          <p class="card-text"><%= entry["description"] %></p>
           <p class="card-text"><small><%= entry["occurred_on"] %></small></p>
           <% if entry.uploaded_image.attached? %>
-            <img src="<%= url_for(entry.uploaded_image) %>" class="img-fluid">
+            <img src="<%= url_for(entry.uploaded_image) %>" class="img-fluid mb-2">
           <% end %>
+          <p class="card-text"><%= entry["description"] %></p>
         </div>
       </div>
     </div>
@@ -27,3 +27,4 @@
 <p>
   <a href="/places" class="btn btn-primary">Back to All Places</a>
 </p>
+
