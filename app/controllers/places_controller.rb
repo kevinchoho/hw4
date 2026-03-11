@@ -6,7 +6,11 @@ class PlacesController < ApplicationController
 
   def show
     @place = Place.find_by({ "id" => params["id"] })
+    if @current_user != nil
     @entries = Entry.where({ "place_id" => @place["id"] })
+     else
+      @entries = []
+    end
   end
 
   def new
@@ -20,3 +24,5 @@ class PlacesController < ApplicationController
   end
 
 end
+
+
