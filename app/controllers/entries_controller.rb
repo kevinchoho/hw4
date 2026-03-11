@@ -4,6 +4,7 @@ class EntriesController < ApplicationController
     if @current_user == nil
       redirect_to "/login"
     end
+    @place_id = params["place_id"]
   end
 
   def create
@@ -23,4 +24,3 @@ class EntriesController < ApplicationController
   end
 
 end
-
